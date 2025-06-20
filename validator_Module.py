@@ -7,7 +7,7 @@ def clean_cpf(cpf):
     return clean_cpf
 
 
-def validate_length(cpf):
+def is_valid_length(cpf):
     return len(cpf) == CPF_LENGTH
 
 
@@ -34,7 +34,7 @@ def calc_digit(cpf, position):
 def validate_cpf(cpf):
     final_cpf = clean_cpf(cpf)
 
-    if not validate_length(final_cpf):
+    if not is_valid_length(final_cpf):
         return False
     
     first_digit = calc_digit(final_cpf, CPF_LENGTH - 1)
