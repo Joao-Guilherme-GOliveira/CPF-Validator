@@ -11,8 +11,8 @@ def validate_length(cpf):
     return len(cpf) == CPF_LENGTH
 
 
-def validate_number(cpf):
-    return not (cpf == cpf[0] * len(cpf))
+def is_uniform_digits(cpf):
+    return cpf == cpf[0] * len(cpf)
 
 
 def calc_digit(cpf, position):
@@ -41,7 +41,7 @@ def validate_cpf(cpf):
     cpf_to_second = final_cpf[:9] + str(first_digit)
     second_digit = calc_digit(cpf_to_second, CPF_LENGTH)
 
-    if not validate_number(final_cpf):
+    if is_uniform_digits(final_cpf):
         return False
     
     return first_digit == int(final_cpf[9]) and second_digit == int(final_cpf[CPF_LENGTH - 1])
