@@ -16,7 +16,7 @@ def calc_digit(cpf, position):
     sum = 0
 
     for i in range(position - 1):
-        sum+=int(cpf[i]) * position
+        sum += int(cpf[i]) * position
         position -=1 
 
     rest = sum % 11
@@ -30,7 +30,6 @@ def calc_digit(cpf, position):
 
 def validate_cpf(cpf):
     final_cpf = clean_cpf(cpf)
-
 
     if not validate_length(final_cpf):
         return False
