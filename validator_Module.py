@@ -44,7 +44,4 @@ def validate_cpf(cpf):
     if not validate_number(final_cpf):
         return False
     
-    if first_digit == int(final_cpf[9]) and second_digit == int(final_cpf[CPF_LENGTH - 1]):
-        return True
-    else:
-        return False
+    return first_digit == int(final_cpf[9]) and second_digit == int(final_cpf[CPF_LENGTH - 1])
