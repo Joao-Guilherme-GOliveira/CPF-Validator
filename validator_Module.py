@@ -16,13 +16,13 @@ def validate_number(cpf):
 
 
 def calc_digit(cpf, position):
-    sum = 0
+    result = 0
 
     for i in range(position - 1):
-        sum += int(cpf[i]) * position
+        result += int(cpf[i]) * position
         position -=1 
 
-    rest = sum % CPF_LENGTH
+    rest = result % CPF_LENGTH
 
     if rest < 2:
         return 0
